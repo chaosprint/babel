@@ -1,4 +1,4 @@
-use babel::model::{ChatMessage, Groq, GroqModel, LLMBuilder};
+use babel::{ChatMessage, Groq, GroqModel, LLMBuilder};
 use tokio;
 
 #[tokio::main]

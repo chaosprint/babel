@@ -1,4 +1,4 @@
-use babel::model::{ChatMessage, LLMBuilder, OpenRouter, OpenRouterModel};
+use babel::{ChatMessage, LLMBuilder, OpenRouter, OpenRouterModel};
 use futures::StreamExt;
 use tokio;
 
