@@ -7,3 +7,17 @@ license = "MIT OR Apache-2.0"
 authors = ["chaosprint (Qichao Lan)"]
 
 [dependencies]
+tokio = { version = "1.44.1", features = ["full"] }
+tokio-stream = "0.1"
+futures = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.12.14", features = ["json", "stream"] }
+tracing = "0.1"
+async-stream = "0.3"
+rand = "0.9"
+dotenv = "0.15"
+async-trait = "0.1.88"
+parking_lot = "0.12.3"
+tracing-subscriber = "0.3.19"
+anyhow = "1.0.97"

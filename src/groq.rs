@@ -57,3 +57,4 @@ impl std::fmt::Display for Groq {
         write!(f, "{}", s)
     }
 }
+
