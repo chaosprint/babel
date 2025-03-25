@@ -1,6 +1,6 @@
 [package]
 name = "babel"
-version = "0.0.3"
+version = "0.0.4"
 edition = "2021"
 description = "Map Rust enums to different LLM providers' model strings"
 license = "MIT OR Apache-2.0"
@@ -21,3 +21,4 @@ async-trait = "0.1.88"
 parking_lot = "0.12.3"
 tracing-subscriber = "0.3.19"
 anyhow = "1.0.97"
+crossterm = "0.28.1"

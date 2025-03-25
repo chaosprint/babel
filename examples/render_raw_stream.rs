@@ -7,9 +7,10 @@ async fn main() -> Result<(), String> {
     
     // Create an OpenRouter LLM instance
     let openrouter_llm = LLMBuilder::<OpenRouter>::new()
-        .model(OpenRouterModel::GoogleGeminiPro20ExpFree)
+        .model(OpenRouterModel::GoogleGemini20ProExpFree)
         .temperature(1.0)
         .max_tokens(512)
+        .system_prompt("reply in json format and put all markdown response in 'response' key".into())
         .build()?;
     
     println!("Using OpenRouter model: {}", openrouter_llm.get_model_id());
@@ -18,19 +19,19 @@ async fn main() -> Result<(), String> {
     let messages = vec![
         ChatMessage {
             role: "user".to_string(),
-            content: "Briefly explain AI history.".to_string(),
+            content: "How to visit Oslo?".to_string(),
         }
     ];
     
     // Get streaming response
     println!("OpenRouter response:");
     let mut stream = openrouter_llm.stream_chat(messages).await;
+    let mut renderer = babel::utils::MarkdownStreamRenderer::new();
     while let Some(result) = stream.next().await {
         match result {
             Ok(response) => {
                 if let Some(content) = response.get_content() {
-                    print!("{}", content);
-                    std::io::Write::flush(&mut std::io::stdout()).unwrap();
+                    renderer.process_chunk(&content);
                 }
             }
             Err(e) => eprintln!("Error: {}", e),

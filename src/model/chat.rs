@@ -36,10 +36,10 @@ pub struct Usage {
     pub total_tokens: Option<u32>,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct Delta {
     // pub role: Option<String>,
-    content: Option<String>,
+    pub content: Option<String>,
 }
 
 impl Default for Delta {
@@ -71,6 +71,7 @@ pub struct StreamResponse {
 }
 
 impl StreamResponse {
+
     pub fn get_content(&self) -> Option<String> {
         self.choices
             .first()
