@@ -165,6 +165,7 @@ impl<P: Provider> LLMBuilder<P> {
 }
 
 // LLMClient implementation
+#[derive(Debug)]
 pub struct LLMClient<P: Provider> {
     model: P::ModelType,
     api_key: String,
