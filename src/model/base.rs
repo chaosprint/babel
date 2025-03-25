@@ -11,11 +11,12 @@ macro_rules! define_provider_models {
     ($provider:ident, $enum_name:ident, {
         $(($variant:ident, $value:expr)),*
     }) => {
-        // Define model enum
+        // Define model enum with Debug derive
+        #[derive(Debug)]
         pub enum $enum_name {
             $($variant),*
         }
-        
+
         // Implement Model trait for enum
         impl Model for $enum_name {
             fn model_id(&self) -> &'static str {

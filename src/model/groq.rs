@@ -1,11 +1,11 @@
-use super::base::{Model, Provider, define_provider_models};
+use super::base::{define_provider_models, Model, Provider};
 
-// Define Groq provider
+#[derive(Debug)]
 pub struct Groq;
 
 impl Provider for Groq {
     type ModelType = GroqModel;
-    
+
     fn provider_name() -> &'static str {
         "groq"
     }

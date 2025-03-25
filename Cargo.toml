@@ -1,6 +1,6 @@
 [package]
 name = "babel"
-version = "0.0.6"
+version = "0.0.7"
 edition = "2021"
 description = "Map Rust enums to different LLM providers' model strings"
 license = "MIT OR Apache-2.0"

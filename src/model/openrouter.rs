@@ -1,10 +1,11 @@
-use super::base::{Model, Provider, define_provider_models};
+use super::base::{define_provider_models, Model, Provider};
 
+#[derive(Debug)]
 pub struct OpenRouter;
 
 impl Provider for OpenRouter {
     type ModelType = OpenRouterModel;
-    
+
     fn provider_name() -> &'static str {
         "openrouter"
     }
