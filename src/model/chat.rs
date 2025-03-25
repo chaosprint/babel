@@ -91,7 +91,7 @@ impl StreamResponse {
     }
 }
 
-// LLM Builder
+// LLMClient Builder
 pub struct LLMBuilder<P: Provider> {
     model: Option<P::ModelType>,
     api_key: Option<String>,
@@ -136,7 +136,7 @@ impl<P: Provider> LLMBuilder<P> {
         self
     }
     
-    pub fn build(self) -> Result<LLM<P>, String> {
+    pub fn build(self) -> Result<LLMClient<P>, String> {
         // Load environment variables
         dotenv().ok();
         
@@ -152,7 +152,7 @@ impl<P: Provider> LLMBuilder<P> {
             }
         };
         
-        Ok(LLM {
+        Ok(LLMClient {
             model,
             api_key,
             max_tokens: self.max_tokens.unwrap_or(1024),
@@ -164,8 +164,8 @@ impl<P: Provider> LLMBuilder<P> {
     }
 }
 
-// LLM implementation
-pub struct LLM<P: Provider> {
+// LLMClient implementation
+pub struct LLMClient<P: Provider> {
     model: P::ModelType,
     api_key: String,
     max_tokens: u32,
@@ -175,7 +175,7 @@ pub struct LLM<P: Provider> {
     _provider: PhantomData<P>,
 }
 
-impl<P: Provider> LLM<P> {
+impl<P: Provider> LLMClient<P> {
     pub fn get_model_id(&self) -> &'static str {
         self.model.model_id()
     }

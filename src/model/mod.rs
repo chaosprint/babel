@@ -7,7 +7,7 @@ mod chat;
 pub use base::{Model, Provider};
 pub use groq::{Groq, GroqModel};
 pub use openrouter::{OpenRouter, OpenRouterModel};
-pub use chat::{ChatMessage, LLM, LLMBuilder, StreamResponse, Usage};
+pub use chat::{ChatMessage, LLMClient, LLMBuilder, StreamResponse, Usage};
 
 // Example usage:
 /*
