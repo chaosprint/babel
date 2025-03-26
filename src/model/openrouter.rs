@@ -12,6 +12,7 @@ impl Provider for OpenRouter {
 }
 
 define_provider_models!(OpenRouter, OpenRouterModel, {
+    (GoogleGemini25ProExp0325Free, "google/gemini-2.5-pro-exp-03-25:free"),
     (GoogleGemini20ProExpFree, "google/gemini-2.0-pro-exp-02-05:free"),
     (DeepSeekChatV30324, "deepseek/deepseek-chat-v3-0324"),
     ( DeepSeekChatV30324Free, "deepseek/deepseek-chat-v3-0324:free"),
