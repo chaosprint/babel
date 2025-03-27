@@ -217,6 +217,7 @@ impl<P: Provider> LLMClient<P> {
         let base_url = match P::provider_name() {
             "groq" => "https://api.groq.com/openai/v1/chat/completions".to_string(),
             "openrouter" => "https://openrouter.ai/api/v1/chat/completions".to_string(),
+            "sambanova" => "https://api.sambanova.ai/v1/chat/completions".to_string(),
             _ => return Box::pin(stream! {
                 yield Err("Unsupported provider".to_string());
             }),

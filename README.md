@@ -24,6 +24,7 @@ babel = "0.0.3"
 Currently, Babel supports the following providers:
 - Groq
 - OpenRouter (API compatible)
+- SambaNova
 
 ## Quick Start
 

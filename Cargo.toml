@@ -1,8 +1,8 @@
 [package]
 name = "babel"
-version = "0.0.8"
+version = "0.0.9"
 edition = "2021"
-description = "Map Rust enums to different LLM providers' model strings"
+description = "Provide Rust enums for Groq, SambaNova, Openrouter's llm model names."
 license = "MIT OR Apache-2.0"
 authors = ["chaosprint (Qichao Lan)"]
 
