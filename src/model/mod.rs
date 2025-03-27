@@ -7,7 +7,7 @@ mod sambanova;
 // Re-export the main components
 pub use base::{Model, Provider};
 pub use groq::{Groq, GroqModel};
-pub use sambanova::{SamboNova, SamboNovaModel};
+pub use sambanova::{SambaNova, SambaNovaModel};
 pub use openrouter::{OpenRouter, OpenRouterModel};
 pub use chat::{ChatMessage, LLMClient, LLMBuilder, StreamResponse, Usage};
 

@@ -1,6 +1,6 @@
 [package]
 name = "babel"
-version = "0.0.9"
+version = "0.0.10"
 edition = "2021"
 description = "Provide Rust enums for Groq, SambaNova, Openrouter's llm model names."
 license = "MIT OR Apache-2.0"
